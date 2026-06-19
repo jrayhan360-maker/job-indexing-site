@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/*.js", "use": "@vercel/node" },
+    { "src": "index.html", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/post-job", "dest": "/api/post-job.js" },
+    { "src": "/api/job", "dest": "/api/job.js" },
+    { "src": "/api/list-jobs", "dest": "/api/list-jobs.js" },
+    { "src": "/api/feed", "dest": "/api/feed.js" },
+    { "src": "/feed.xml", "dest": "/api/feed.js" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
+}
